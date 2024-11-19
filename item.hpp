@@ -1,3 +1,5 @@
+#ifndef ITEM_HPP
+#define ITEM_HPP
 #include <string>
 #include <iostream>
 
@@ -32,3 +34,5 @@ class Item {
     //för att kunna bestämma om ett item ska vara tillgängligt eller inte.
     void setisAvailable(bool status){isAvailable = status;}
 };
+
+#endif
