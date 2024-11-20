@@ -1,6 +1,7 @@
-#include <iostream>;
-#include <vector>;
-#include "Item.hpp"
+#ifndef LIBRARYUSER_HPP
+#define LIBRARYUSER_HPP
+#include <vector>
+#include "item.hpp"
 
 class User {
     private:
@@ -11,9 +12,11 @@ class User {
 
     User(std::string newName);
     //bool tar in objektet book eller magazine som parameter returnerar  true eller false beroende på om de lyckades eller inte
-    void borrowItem(Item* item);
+    bool borrowItem(Item* item);
     //bool tar in en item pekare returnerar true eller false om return item funkar eller inte
     bool returnItem(Item* item);
 
     void listBorrowedItems();
 };
+
+#endif

@@ -1,6 +1,7 @@
 #include <iostream>
 #include "book.hpp"
 #include "libraryUser.hpp"
+#include "library.hpp"
 
 int main() {
 
@@ -13,13 +14,28 @@ delete harryPotter;
 //sätter till nullptr för att inte pekare fortfarande ska peka på frigjort minne 
 //vilket kan skapa buggar om man skapar en ny pekare som sen pekar på samma minne.
 harryPotter = nullptr; */
-
+Library stadsbilioteket;
 
 User ludde("Ludvig");
 
-ludde.borrowItem(harryPotter);
+stadsbilioteket.registerUser(&ludde);
 
-ludde.listBorrowedItems();
+stadsbilioteket.addItem(harryPotter);
+
+stadsbilioteket.listItems();
+
+stadsbilioteket.ListAvailableItems();
+
+if(stadsbilioteket.borrowLib(&ludde, harryPotter)) {
+    std::cout << "Du har nu lånat boken\n";
+}
+else {
+    std::cout << "Boken redan utlånad eller finns inte i biblioteket\n";
+};
+
+stadsbilioteket.ListAvailableItems();
+
+
 
 
 

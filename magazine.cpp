@@ -1,4 +1,11 @@
 #include "magazine.hpp"
+#include <iostream>
+
+
+
+
+
+
 Magazine::Magazine(std::string newTitle ,std::string newAuthor,int newReleaseYear, int newIssue):
 Item(newTitle,newAuthor,newReleaseYear),issue(newIssue){}
 
